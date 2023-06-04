@@ -17,6 +17,6 @@ public class DictionaryConstant {
     public static final String ACCESS_KEY_SECRET = "";
 
     /* 阿里Bucket存储空间名称 */
-    public static final String BUCKET_NAME = "anyun-oss";
+    public static final String BUCKET_NAME = "";
 
 }
