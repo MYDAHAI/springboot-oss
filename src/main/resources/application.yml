@@ -1,0 +1,22 @@
+server:
+  port: 8088
+
+spring:
+  #freemarker
+  freemarker:
+    template-loader-path: classpath:/templates
+    cache: false
+    charset: utf-8
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+    suffix: .ftl
+
+
+  servlet:
+    multipart:
+      enabled: true
+      max-request-size: 10MB # 上传文件总的最大值
+      max-file-size: 10MB  # 单个文件的最大值
