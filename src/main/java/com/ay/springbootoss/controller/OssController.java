@@ -2,23 +2,20 @@ package com.ay.springbootoss.controller;
 
 import com.aliyun.oss.ClientException;
 import com.aliyun.oss.OSS;
-import com.aliyun.oss.OSSClientBuilder;
 import com.aliyun.oss.OSSException;
 import com.aliyun.oss.model.*;
 import com.ay.springbootoss.config.AliOssConfig;
 import com.ay.springbootoss.entity.ServiceData;
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
-import java.util.Date;
 import java.util.UUID;
 
-import static com.ay.springbootoss.enums.AliOssEnum.END_POINt;
-import static com.ay.springbootoss.utils.DictionaryUtil.BUCKET_NAME;
+import static com.ay.springbootoss.constant.DictionaryConstant.BUCKET_NAME;
+import static com.ay.springbootoss.constant.DictionaryConstant.END_POINt;
 
 
 /**
@@ -95,7 +92,7 @@ public class OssController {
 
             //把上传到oss的路径返回   公共访问则直接拼接返回即可
             //需要将路径手动拼接出来，https://xxxxxx.oss-cn-shanghai.aliyuncs.com/edu/avatar/xxxxxx.jpg
-            url = "https://"+ BUCKET_NAME + "." + END_POINt.getVal() + "/" + objectName;
+            url = "https://"+ BUCKET_NAME + "." + END_POINt + "/" + objectName;
         } catch (Exception e) {
             return ServiceData.getException(e);
         } finally {
